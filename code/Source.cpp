@@ -247,8 +247,8 @@ Mat remplirSurface(Mat& image, vector<Vec4i> vecteur) {
 	
 	Mat imageF;
 	cvtColor(image, imageF, COLOR_GRAY2BGR);
-	int width = abs(vecteur[0][0] - vecteur[0][2]), height = abs(vecteur[0][1] - vecteur[1][1]);
-	Rect rec = Rect(vecteur[0][0], vecteur[0][1], width, height);
+	Rect rec = Rect(vecteur[0][0], vecteur[0][1], vecteur[0][2], vecteur[1][3]);
+	cout << vecteur.at(0)<< endl<<vecteur.at(1);
 	//dessiner le rectangle
 	rectangle(imageF,rec, Scalar(255, 0, 0), 3,8 ,0);
 	int index = vecteur[0][1];
